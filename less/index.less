@@ -1,0 +1,104 @@
+/* 引入外部样式表 */
+@import 'adapter.less';
+@import 'base.css';
+
+// 正方体的宽高
+@cube : 400rem/16;
+@cubeHalf :400rem/32;
+// 主体开始
+.index {
+    position: relative;
+    height: 100%;
+    //正方体
+    .cube {
+        height: @cube;
+        width: @cube;
+
+        position: absolute;
+        left: 31%;
+        top: 22%;
+
+        transform-style: preserve-3d;
+        // transform:rotateX(103deg) rotateY(48deg);
+        div {
+            height: 100%;
+            width: 100%;
+            background-color: blue;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            opacity:0.5;
+        }
+        .top{
+            background-color: red;
+            transform:rotateX(90deg) translateZ(@cubeHalf);
+        }
+        .bottom{
+            background-color: green;
+            transform:rotateX(90deg) translateZ(-@cubeHalf);
+        }
+        .left{
+            background-color: yellow;
+            transform:rotateY(90deg) translateZ(@cubeHalf);
+        }
+        .right{
+            background-color: pink;
+            transform:rotateY(90deg) translateZ(-@cubeHalf);
+        }
+        .front{
+            background-color: orange;
+            transform:translateZ(@cubeHalf)
+        }
+        .back{
+            background-color: purple;
+            transform:translateZ(-@cubeHalf)
+        }
+    }
+}
+//封装动画
+@keyframes leftround {
+    0%{
+    transform:rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform:rotateX(0deg)  rotateY(360deg);
+    }
+}
+.roundleft{
+    animation: leftround 5s;
+}
+@keyframes rightround {
+    0%{
+    transform:rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform:rotateX(0deg)  rotateY(-360deg);
+    }
+}
+.roundright{
+    animation: rightround 5s;
+}
+@keyframes upround {
+    0%{
+    transform:rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform:rotateX(360deg)  rotateY(0deg);
+    }
+}
+.roundup{
+    animation: upround 5s;
+}
+@keyframes downround {
+    0%{
+    transform:rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform:rotateX(-360deg)  rotateY(0deg);
+    }
+}
+.rounddown{
+    animation: downround 5s;
+}
