@@ -146,11 +146,10 @@
         border-top:#D2D2D2 solid 1px;
         border-bottom:#D2D2D2 solid 1px;
         overflow:hidden;
-        li {
-            float: left;
+        h3 {
             height: 100%;
             line-height:80rem/32;
-            padding:0 15rem/32;
+            text-align:center;
         }
 
     }
@@ -167,9 +166,10 @@
             padding:20rem/32;
             li{
                 font-size:35rem/32;
-                width: 100%;
-                padding:20rem/32 0;
+                // width: 100%;
+                padding:20rem/32 20rem/32;
                 border-bottom:#D2D2D2 solid 1px;
+                white-space:nowrap;
             }
         }
     }
@@ -184,6 +184,7 @@
     top: 0;
     left: 0;
     background-color: #2D2E40;
+
     .portrait {
         height: 140rem/32;
         width: 140rem/32;
@@ -217,6 +218,10 @@
 }
 .moveout{
     transform:translate(400rem/32);
+    width: 240rem/32;
+    h2 {
+        color:#fff;
+    }
 }
 .moveto {
     transform:translate(0);

@@ -4,20 +4,11 @@ $(function(){
     // $(".cube").ownSwipe('swipeRight','roundright');
     // $(".cube").ownSwipe('swipeUp','roundup');
     // $(".cube").ownSwipe('swipeDown','rounddown');
-    var flag = true;
-    $("#switch").on("click",function(){
-        if(flag){
-            $(".header").addClass('moveout');
-            $(".content").addClass("moveout")
-            $(".aside").addClass("moveto");
-            flag = false;
-        }else{
-            $(".header").removeClass('moveout');
-            $(".content").removeClass("moveout")
-            $(".aside").removeClass("moveto")
-            flag = true;
-        }
 
+    $("#switch").on("click",function(){
+        $(".header").toggleClass('moveout');
+        $(".content").toggleClass("moveout");
+        $(".aside").toggleClass("moveto");
     })
 
 
