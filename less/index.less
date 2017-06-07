@@ -3,60 +3,8 @@
 @import 'base.css';
 
 // 正方体的宽高
-@cube : 400rem/16;
-@cubeHalf :400rem/32;
-// 主体开始
-.index {
-    position: relative;
-    height: 100%;
-    //正方体
-    .cube {
-        height: @cube;
-        width: @cube;
-
-        position: absolute;
-        left: 31%;
-        top: 22%;
-
-        transform-style: preserve-3d;
-        // transform:rotateX(103deg) rotateY(48deg);
-        div {
-            height: 100%;
-            width: 100%;
-            background-color: blue;
-
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            // opacity:0.5;
-        }
-        .top{
-            background-color: red;
-            transform:rotateX(90deg) translateZ(@cubeHalf);
-        }
-        .bottom{
-            background-color: green;
-            transform:rotateX(90deg) translateZ(-@cubeHalf);
-        }
-        .left{
-            background-color: yellow;
-            transform:rotateY(90deg) translateZ(@cubeHalf);
-        }
-        .right{
-            background-color: pink;
-            transform:rotateY(90deg) translateZ(-@cubeHalf);
-        }
-        .front{
-            background-color: orange;
-            transform:translateZ(@cubeHalf)
-        }
-        .back{
-            background-color: purple;
-            transform:translateZ(-@cubeHalf)
-        }
-    }
-}
+@cube : 300rem/32;
+@cubeHalf :300rem/64;
 //封装动画
 @keyframes leftround {
     0%{
@@ -67,7 +15,7 @@
     }
 }
 .roundleft{
-    animation: leftround 5s;
+    animation: leftround 2s;
 }
 @keyframes rightround {
     0%{
@@ -78,7 +26,7 @@
     }
 }
 .roundright{
-    animation: rightround 5s;
+    animation: rightround 2s;
 }
 @keyframes upround {
     0%{
@@ -89,7 +37,7 @@
     }
 }
 .roundup{
-    animation: upround 5s;
+    animation: upround 2s;
 }
 @keyframes downround {
     0%{
@@ -100,5 +48,177 @@
     }
 }
 .rounddown{
-    animation: downround 5s;
+    animation: downround 2s;
 }
+
+
+@keyframes none {
+    100%{
+        transfrom:translateX(200px);
+    }
+}
+.opa{
+    animation: none 2s;
+}
+
+// 标题高
+@headHeight : 80rem/32;
+
+ //正方体
+.cube {
+    height: @cube;
+    width: @cube;
+
+    position: absolute;
+    left: 28%;
+    top: 22%;
+
+    transform-style: preserve-3d;
+    transfrom:translate(200px 100px);
+    // transform:rotateX(103deg) rotateY(48deg);
+    div {
+        height: 100%;
+        width: 100%;
+        background-color: blue;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        // opacity:0.5;
+    }
+    .top{
+        background-color: red;
+        transform:rotateX(90deg) translateZ(@cubeHalf);
+    }
+    .bottom{
+        background-color: green;
+        transform:rotateX(90deg) translateZ(-@cubeHalf);
+    }
+    .left{
+        background-color: yellow;
+        transform:rotateY(90deg) translateZ(@cubeHalf);
+    }
+    .right{
+        background-color: pink;
+        transform:rotateY(90deg) translateZ(-@cubeHalf);
+    }
+    .front{
+        background-color: orange;
+        transform:translateZ(@cubeHalf)
+    }
+    .back{
+        background-color: purple;
+        transform:translateZ(-@cubeHalf)
+    }
+}
+//头部栏
+.header{
+    // transform:translate(400rem/32,0);
+    width: 100%;
+    // height: @headHeight;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition:all 0.5s 0.1s;
+    transform:translate(0);
+    z-index:3;
+    .left {
+        position: absolute;
+        top: 16rem/32;
+        left: 38rem/32;
+    }
+    h2{
+        height: @headHeight;
+        width: 100%;
+        line-height:@headHeight;
+        // padding: 0 100rem/32;
+        font-size:30rem/32;
+        text-align:center;
+        background-color: #fff;
+        // margin-left:-10px;
+    }
+    // 列表头
+    .list-name {
+        height: 80rem/32;
+        width: 100%;
+        background-color:#F6F6F6;
+        border-top:#D2D2D2 solid 1px;
+        border-bottom:#D2D2D2 solid 1px;
+        overflow:hidden;
+        li {
+            float: left;
+            height: 100%;
+            line-height:80rem/32;
+            padding:0 15rem/32;
+        }
+
+    }
+}
+// 列表项
+.content {
+    transform:translate(0);
+    transition:all 0.5s 0.1s;
+
+    .lists {
+        //列表内容
+        .lists-con{
+            margin-top:80rem/32+ @headHeight;
+            padding:20rem/32;
+            li{
+                font-size:35rem/32;
+                width: 100%;
+                padding:20rem/32 0;
+                border-bottom:#D2D2D2 solid 1px;
+            }
+        }
+    }
+}
+//左侧隐藏列表
+.aside{
+    height: 100%;
+    width: 400rem/32;
+    transform:translate(-400rem/32);
+    transition:all 0.5s 0.1s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2D2E40;
+    .portrait {
+        height: 140rem/32;
+        width: 140rem/32;
+        background:url(../images/portrait.jpg) no-repeat center;
+        background-size:140rem/32;
+        border-radius:50%;
+        margin:40rem/32 auto;
+    }
+    .navs {
+        // background-color: red;
+        ul {
+
+            li {
+                height: 92rem/32;
+                line-height:92rem/32;
+                padding-left:40rem/32;
+
+                a,i{
+                    color:#6A6B7D;
+                    margin:0 10rem/32;
+                }
+            }
+            li:first-child{
+                background-color:#EB354C ;
+                a,i{
+                    color:white;
+                }
+            }
+        }
+    }
+}
+.moveout{
+    transform:translate(400rem/32);
+}
+.moveto {
+    transform:translate(0);
+}
+

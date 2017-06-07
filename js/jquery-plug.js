@@ -1,6 +1,6 @@
 (function(){
-    //左滑动效果
-    $.fn.ownSwipeLeft = function(event,classname){
+    //滑动效果
+    $.fn.ownSwipe = function(event,classname){
         var that = $(this);
         $('body').on(event,function(){
             that.addClass(classname);
@@ -9,4 +9,6 @@
             this.className="cube";
         }, false);
     };
-})($)
+
+
+})($);
