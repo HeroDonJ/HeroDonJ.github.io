@@ -11,6 +11,7 @@
 
         }
     </style>
+    <script type="text/javascript" src ="plug-in/iscroll.js"></script>
 
 </head>
 
@@ -35,7 +36,7 @@
 
     <!-- 主要内容区 -->
     <div class="content">
-        <div class="lists">
+        <div class="lists" id="lists">
             <ul class="lists-con">
                 <li>HTML结构</li>
                 <li>DOCTYPE作用</li>
@@ -44,6 +45,17 @@
                 <li>段落标签</li>
                 <li>表格标签</li>
                 <li>列表标签</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
+                <li>表单</li>
                 <li>表单</li>
             </ul>
         </div>
@@ -103,5 +115,10 @@
     <script type="text/javascript" src="plug-in/touch.js"></script>
     <script type="text/javascript" src="js/jquery-plug.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        var myscroll = new IScroll('#lists',{
+            fadeScrollbar:true
+        });
+    </script>
 </body>
 </html>
