@@ -1,117 +1,13 @@
 /* 引入外部样式表 */
 @import 'adapter.less';
-@import 'base.css';
+@import 'base.less';
 
 // 正方体的宽高
 @cube : 300rem/32;
 @cubeHalf :300rem/64;
-//封装动画
-@keyframes leftround {
-    0%{
-    transform:rotateX(0deg) rotateY(0deg);
-    }
-    100%{
-        transform:rotateX(0deg)  rotateY(-360deg);
-    }
-}
-.roundleft{
-    animation: leftround 2s;
-}
-@keyframes rightround {
-    0%{
-    transform:rotateX(0deg) rotateY(0deg);
-    }
-    100%{
-        transform:rotateX(0deg)  rotateY(360deg);
-    }
-}
-.roundright{
-    animation: rightround 2s;
-}
-@keyframes upround {
-    0%{
-    transform:rotateX(0deg) rotateY(0deg);
-    }
-    100%{
-        transform:rotateX(360deg)  rotateY(0deg);
-    }
-}
-.roundup{
-    animation: upround 2s;
-}
-@keyframes downround {
-    0%{
-    transform:rotateX(0deg) rotateY(0deg);
-    }
-    100%{
-        transform:rotateX(-360deg)  rotateY(0deg);
-    }
-}
-.rounddown{
-    animation: downround 2s;
-}
-
-
-@keyframes none {
-    100%{
-        transfrom:translateX(200px);
-    }
-}
-.opa{
-    animation: none 2s;
-}
 
 // 标题高
 @headHeight : 80rem/32;
-
- //正方体
-.cube {
-    height: @cube;
-    width: @cube;
-
-    position: absolute;
-    left: 28%;
-    top: 22%;
-
-    transform-style: preserve-3d;
-    transfrom:translate(200px 100px);
-    // transform:rotateX(103deg) rotateY(48deg);
-    div {
-        height: 100%;
-        width: 100%;
-        background-color: blue;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        // opacity:0.5;
-    }
-    .top{
-        background-color: red;
-        transform:rotateX(90deg) translateZ(@cubeHalf);
-    }
-    .bottom{
-        background-color: green;
-        transform:rotateX(90deg) translateZ(-@cubeHalf);
-    }
-    .left{
-        background-color: yellow;
-        transform:rotateY(90deg) translateZ(@cubeHalf);
-    }
-    .right{
-        background-color: pink;
-        transform:rotateY(90deg) translateZ(-@cubeHalf);
-    }
-    .front{
-        background-color: orange;
-        transform:translateZ(@cubeHalf)
-    }
-    .back{
-        background-color: purple;
-        transform:translateZ(-@cubeHalf)
-    }
-}
 //头部栏
 .header{
     // transform:translate(400rem/32,0);
@@ -137,20 +33,26 @@
         text-align:center;
         background-color: #fff;
         // margin-left:-10px;
+        // margin:0;
     }
     // 列表头
     .list-name {
         height: 80rem/32;
         width: 100%;
         background-color:#F6F6F6;
+        background-color: #EB354C ;
         border-top:#D2D2D2 solid 1px;
         border-bottom:#D2D2D2 solid 1px;
-        overflow:hidden;
+        border-left:#D2D2D2 solid 1px;
+        // overflow:hidden;
         h3 {
-            height: 100%;
+            height: 80rem/32;
             line-height:80rem/32;
             text-align:center;
             color:#EB354C ;
+            color:#fff;
+            margin:0;
+            // font-size:30rem/32;
         }
 
     }
@@ -159,7 +61,7 @@
 .content {
     transform:translate(0);
     transition:all 0.5s 0.1s;
-
+    // margin-top :@headHeight + 80rem/32;
     .lists {
         //列表内容
         height: 1128rem/32;
@@ -167,11 +69,25 @@
         .lists-con{
             margin-top:80rem/32+ @headHeight;
             padding:20rem/32;
-            li{
-                font-size:35rem/32;
-                padding:20rem/32 20rem/32;
+            a{
+                display: block;
+                font-size:30rem/32;
+                padding:30rem/32;
                 border-bottom:#D2D2D2 solid 1px;
                 white-space:nowrap;
+                color:#000;
+                over-flow:hidden;
+                position: relative;
+
+                span{
+                    font-size:20rem/32;
+                    position: absolute;
+                    right:20rem/32;
+                    bottom:10rem/32;
+                }
+            }
+            li:nth-child(2n){
+                background-color:#F9F9F9;
             }
         }
     }
@@ -199,15 +115,12 @@
         // background-color: red;
         ul {
 
-            li {
+            a {
                 height: 80rem/32;
                 line-height:80rem/32;
                 padding-left:40rem/32;
-
-                a,i{
-                    color:#6A6B7D;
-                    margin:0 10rem/32;
-                }
+                display: block;
+                color:#6A6B7D;
             }
             li:first-child{
                 background-color:#EB354C ;
@@ -224,6 +137,9 @@
     overflow:hidden;
     h2 {
         color:#fff;
+    }
+    .lists .lists-con span{
+        display:none;
     }
 }
 .moveto {
