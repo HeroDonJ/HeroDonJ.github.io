@@ -6,7 +6,9 @@ requirejs.config({
         template : 'artTemplate/template',
         iscroll : '../plug-in/iscroll',
         common : '../js/common',
-        data : '../js/data'
+        data : '../js/data',
+        zepto : '../plug-in/zepto.min',
+        touch : '../plug-in/touch'
     },
     shim : {// 兼容非标准模块
         iscroll : {

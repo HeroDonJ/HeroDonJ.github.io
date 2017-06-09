@@ -69,25 +69,24 @@
         .lists-con{
             margin-top:80rem/32+ @headHeight;
             padding:20rem/32;
-            a{
-                display: block;
-                font-size:30rem/32;
-                padding:30rem/32;
-                border-bottom:#D2D2D2 solid 1px;
-                white-space:nowrap;
-                color:#000;
-                over-flow:hidden;
+            li{
                 position: relative;
-
-                span{
-                    font-size:20rem/32;
-                    position: absolute;
-                    right:20rem/32;
-                    bottom:10rem/32;
+                a{
+                    display: block;
+                    font-size:30rem/32;
+                    padding:30rem/32;
+                    border-bottom:#D2D2D2 solid 1px;
+                    white-space:nowrap;
+                    color:#000;
+                    over-flow:hidden;
                 }
             }
             li:nth-child(2n){
                 background-color:#F9F9F9;
+            }
+            p {
+                font-family:"楷体";
+                // color:red;
             }
         }
     }
@@ -114,7 +113,6 @@
     .navs {
         // background-color: red;
         ul {
-
             a {
                 height: 80rem/32;
                 line-height:80rem/32;
@@ -123,8 +121,8 @@
                 color:#6A6B7D;
             }
             li:first-child{
-                background-color:#EB354C ;
-                a,i{
+                background-color:#EB354C;
+                a{
                     color:white;
                 }
             }
@@ -135,6 +133,9 @@
     transform:translate(400rem/32);
     width: 230rem/32;
     overflow:hidden;
+    a{
+        overflow:hidden;
+    }
     h2 {
         color:#fff;
     }
